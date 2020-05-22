@@ -66,8 +66,8 @@ class UserController {
         if (page > users.pages) {
             res.send("Erro 404 - Página não encontrada")
         }
-        res.render("user/index.ejs", { users, cpf, moment })
-        //res.json(users)
+        //res.render("user/index.ejs", { users, cpf, moment })
+        res.json(users)
     }
 
     async view(req, res) {

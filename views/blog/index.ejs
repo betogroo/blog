@@ -8,6 +8,12 @@
     <h4><%= `[${post.id}] - ${post.title}` %> </h4>
     <p><%= post.message %> </p>
     <h6><%= post.author %> </h6>
+    <h3>Respostas</h3>
+    <% post.response.forEach(response => { %>
+    <p><%= response.message %> </p>
+    <h6><%= response.author %> </h6>
+    <% }) %>
+    <hr>
     <% }) %>
 
 
