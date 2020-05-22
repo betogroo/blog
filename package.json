@@ -1,0 +1,46 @@
+{
+  "name": "blog",
+  "version": "0.0.1",
+  "description": "Blog Node JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betogroo/base-node.git"
+  },
+  "author": "betogroo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/betogroo/base-node/issues"
+  },
+  "homepage": "https://github.com/betogroo/base-node#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bootstrap-icons": "^1.0.0-alpha3",
+    "connect-flash": "^0.1.1",
+    "cpf-cnpj-validator": "^1.0.1",
+    "crypto-random-string": "^3.2.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.4.0",
+    "moment": "^2.24.0",
+    "mysql2": "^2.1.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.21.6",
+    "sequelize-cli": "^5.5.1",
+    "slugify": "^1.4.0"
+  },
+  "keywords": [
+    "blog",
+    "node",
+    "nodejs",
+    "javascript",
+    "mysql",
+    "sequelize",
+    "express"
+  ]
+}

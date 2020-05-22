@@ -1,0 +1,17 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="container">
+
+    <h1>Página inicial do Blog</h1>
+
+    <% posts.forEach(post => { %>
+    <h4><%= `[${post.id}] - ${post.title}` %> </h4>
+    <p><%= post.message %> </p>
+    <h6><%= post.author %> </h6>
+    <% }) %>
+
+
+
+</div>
+
+<%- include('../partials/footer.ejs') %>
