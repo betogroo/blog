@@ -81,7 +81,7 @@ class UserService {
         }
     }
 
-    async getByName(offset, limit, name){
+    async getByName(offset, limit, name) {
         try {
             let users = await this.User.findAndCountAll({
                 include: [

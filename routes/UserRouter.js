@@ -9,7 +9,7 @@ const checkData = require('../helpers/checkData')
 
 
 router.get('/users',
-    isUser,
+    //isUser,
     UserController.index)
 router.get('/user', (req, res) => {
     res.redirect('/users')

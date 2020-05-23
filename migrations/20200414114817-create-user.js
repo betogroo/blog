@@ -24,11 +24,11 @@ module.exports = {
         cpf: {
           type: Sequelize.STRING
         },
-        birthDate:{
+        birthDate: {
           type: Sequelize.DATEONLY
         },
-        gender:{
-          type: Sequelize.ENUM('M','F')
+        gender: {
+          type: Sequelize.ENUM('M', 'F')
         },
         idRole: {
           type: Sequelize.INTEGER,
