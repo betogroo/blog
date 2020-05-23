@@ -40,6 +40,11 @@ class BlogService {
         return coment
     }
 
+    async storePost(data) {
+        var post = await this.Post.create(data)
+        return post
+    }
+
 
 
 

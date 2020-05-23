@@ -3,7 +3,7 @@
 <div class="container">
 
     <h1>Página inicial do Blog</h1>
-    <h3><%=`${posts.count} postagens`%> </h3>
+    <h2><%=`${posts.count} postagens`%> </h2>
 
     <% posts.rows.forEach(post => { %>
     <h5><%= `[${post.id}] - ${post.title}` %> </h5>

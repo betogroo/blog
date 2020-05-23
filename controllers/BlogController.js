@@ -24,6 +24,14 @@ class BlogController {
     res.json({ data, coment })
   }
 
+  async storePost(req, res) {
+    var { idUser, title, message } = req.body
+    var data = { idUser, title, message }
+
+    var post = await BlogService.storePost(data)
+    res.json({ data, post })
+  }
+
 
 
 }
