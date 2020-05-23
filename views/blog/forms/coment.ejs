@@ -1,0 +1,9 @@
+<h5>Comente</h5>
+<form action="/coment" method="post">
+    <input type="hidden" name="idPost" value="<%=post.id%> ">
+    <input type="hidden" name="idUser" value="<%=userLogged.id%> ">
+    <div class="form-group">
+        <textarea class="form-control" name="coment" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary btn-sm">Comentar</button>
+</form>

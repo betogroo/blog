@@ -3,16 +3,34 @@
 <div class="container">
 
     <h1>Página inicial do Blog</h1>
+    <h3><%=`${posts.count} postagens`%> </h3>
 
-    <% posts.forEach(post => { %>
-    <h4><%= `[${post.id}] - ${post.title}` %> </h4>
+    <% posts.rows.forEach(post => { %>
+    <h5><%= `[${post.id}] - ${post.title}` %> </h5>
     <p><%= post.message %> </p>
-    <h6><%= post.author %> </h6>
-    <h3>Respostas</h3>
-    <% post.response.forEach(response => { %>
-    <p><%= response.message %> </p>
-    <h6><%= response.author %> </h6>
+    <small><b><%=`por ${post.User.name} em ${moment(post.createdAt).format('LLL')}` %></b></small>
+
+    <hr>
+    <% if (post.Coments.length > 0) { %>
+
+    <h5>Comentários:</h5>
+    <% post.Coments.forEach(coment => { %>
+    <p><%= coment.message %> </p>
+    <small><b><%=`por ${coment.User.name} em ${moment(coment.createdAt).format('LLL')}` %></b></small>
+    <br>
+    <hr>
     <% }) %>
+    <% } %>
+    <br><br>
+    <h5>Comente</h5>
+    <form action="/blog/coment" method="post">
+        <input type="hidden" name="idPost" value="<%=post.id%>">
+        <input type="hidden" name="idUser" value="<%=userLogged.id%>">
+        <div class="form-group">
+            <textarea class="form-control" name="message" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Comentar</button>
+    </form>
     <hr>
     <% }) %>
 

@@ -49,6 +49,12 @@ module.exports = (sequelize, DataTypes) => {
     this.belongsTo(models.Role, {
       foreignKey: 'idRole'
     })
+    this.hasMany(models.Post, {
+      foreignKey: 'idUser'
+    })
+    this.hasMany(models.Coment, {
+      foreignKey: 'idUser'
+    })
   };
   return User;
 };

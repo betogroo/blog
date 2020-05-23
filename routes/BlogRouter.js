@@ -12,6 +12,11 @@ router.get('/blog', BlogController.index)
 router.get('/blog/new', BlogController.new)
 
 
+// POST
+
+router.post('/blog/coment', BlogController.storeComent)
+
+
 
 
 module.exports = router
