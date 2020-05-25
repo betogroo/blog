@@ -11,6 +11,9 @@ module.exports = {
       title: {
         type: Sequelize.STRING
       },
+      slug:{
+        type: Sequelize.STRING
+      },
       message: {
         type: Sequelize.TEXT
       },
@@ -20,6 +23,10 @@ module.exports = {
           model: 'Users',
           key: 'id'
         }
+      },
+      allowComment:{
+        type: Sequelize.BOOLEAN,
+        defaultValue: 0
       },
       createdAt: {
         allowNull: false,

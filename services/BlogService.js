@@ -34,6 +34,51 @@ class BlogService {
         return post
     }
 
+    async getPost(slug){
+        var post = await this.Post.findOne({
+            where: {
+                slug : slug
+            },
+            include: [
+                {
+                    model: this.User,
+                    attributes: ['id', 'name']
+                },
+                {
+                    model:this.Coment,
+                    include: [
+                        {
+                            model: this.User,
+                            attributes: ['id', 'name']
+                        }
+                    ]
+                }
+            ]
+        })
+        return post
+    }
+
+
+
+    async countComents(post){
+        var idPost = post
+        var nComents = await this.Coment.count({
+            where: {
+                idPost: idPost
+            }
+        })
+        return nComents
+    }
+
+    async countSlug(slug){
+        var nSlug = await this.Post.count({
+            where: {
+                slug: slug
+            }
+        })
+        return nSlug
+    }
+
 
     async storeComent(data) {
         var coment = await this.Coment.create(data)
