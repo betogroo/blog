@@ -1,6 +1,7 @@
 const BlogService = require('../services/BlogService')
 const moment = require('moment')
 const slugify = require('slugify')
+const msg = require('../helpers/msg')
 
 
 class BlogController {
@@ -9,7 +10,7 @@ class BlogController {
   async index(req, res) {
 
     var posts = await BlogService.getAll()
-    res.render('blog/index.ejs', { posts, moment })
+    res.render('blog/index.ejs', { posts, moment, msg })
     res.json(posts)
 
   }
@@ -23,7 +24,7 @@ class BlogController {
     var {slug} = req.params
     var post = await BlogService.getPost(slug)
     var nComents = await BlogService.countComents(post.id)
-    res.render('blog/view.ejs', {post, nComents, moment})
+    res.render('blog/view.ejs', {post, nComents, moment, msg})
     //res.json({post, nComents})
   }
 

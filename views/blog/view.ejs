@@ -22,10 +22,10 @@
                 <p><%=coment.message %> </p><small><%=`por ${coment.User.name}`%> </small>
             <% }) %>
         <% } else { %>
-        <h4>Nenhum comentário até o momento</h4>
+        <h4><%= msg.noComment %> </h4>
         <% } %>
     <% } else { %>
-        <h5>Esta postagem não permite comentários</h5>
+        <h5><%= msg.commentDisabled %> </h5>
     <% } %>
 
 

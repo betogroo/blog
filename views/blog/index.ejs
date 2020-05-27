@@ -15,7 +15,7 @@
      
     
         <% if (post.Coments.length > 0) { %>
-        <h5>Comentários:</h5>
+        <h5><%= msg.comment %> </h5>
         <% post.Coments.forEach(coment => { %>
         <p><%= coment.message %> </p>
         <small><b><%=`por ${coment.User.name} em ${moment(coment.createdAt).format('LLL')}` %></b></small>
@@ -34,7 +34,7 @@
             <button type="submit" class="btn btn-primary btn-sm">Comentar</button>
         </form>
         <% } else { %>
-         <h5>Esta postagem não permite comentários</h5>
+         <h5><%= msg.commentDisabled %> </h5>
     <% } %>
     <hr>
     <% }) %>
