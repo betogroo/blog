@@ -11,7 +11,7 @@ class BlogController {
 
     var posts = await BlogService.getAll()
     res.render('blog/index.ejs', { posts, moment, msg })
-    res.json(posts)
+    //res.json(posts)
 
   }
 
@@ -35,8 +35,17 @@ class BlogController {
   async storeComent(req, res) {
     var { idUser, idPost, message } = req.body
     var data = { idUser, idPost, message }
-    var coment = await BlogService.storeComent(data)
-    res.json({ data, coment })
+    try {
+      var comment = await BlogService.storeComent(data)
+      if (comment) {
+        res.redirect(`/blog/`)
+      } else {
+        res.send('Erro')
+      }
+    } catch (error) {
+      console.log(error)
+    }
+    
   }
 
   async storePost(req, res) {
